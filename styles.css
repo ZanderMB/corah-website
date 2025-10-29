@@ -1,7 +1,6 @@
 .body
 {
-height: 1934px;
-width: 1440px;
+min-width: 320;
 padding: 4px;
 display: flex;
 flex-direction: column;
@@ -13,102 +12,32 @@ position:relative;
 
 .Header-Container
 {
-height:172px;
-width:1432px;
-padding-left:16px;
-padding-right:16px;
-padding-top:16px;
-display:flex;
-flex-direction:row;
-flex-wrap:nowrap;
-justify-content:space-between;
-align-items:center;
-position:absolute;
-top:9.5px;
-left:4px;
+
 }
 
 
 .Logo-Container
 {
-height:156px;
-width:320px;
-align-self:flex-start;
-left:16px;
-top:16px;
-position:absolute;
-padding:10px;
-display:flex;
-flex-direction:row;
-justify-content:flex-start;
-align-items:flex-start;
-gap:10px;
+
 }
 
 .Logo-Inner-Container
 {
-height:136px;
-width:300px;
-align-self:flex-start;
-left:10px;
-top:10px;
-position:absolute;
-border-radius:8px;
-padding:10px;
-display:flex;
-flex-direction:row;
-justify-content:center;
-align-items:center;
-gap:10px;
+
 }
 
 .Nav-Container
 {
-height: 92px;
-width: 1080px;
-align-self: flex-start;
-left: 336px;
-top: 48px;
-position: absolute;
-padding-left: 16px;
-padding-right: 16px;
-padding-top: 16px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
+
 }
 
 .Nav-Inner-Container
 {
-height: 76px;
-width: 1048px;
-align-self: flex-start;
-left: 16px;
-top: 16px;
-position: absolute;
-padding: 16px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: 8px;
+
 }
 
 .NavButton
 {
-height: 44px;
-width: 68px;
-align-self: flex-start;
-left: 257.5px;
-top: 16px;
-position: absolute;
-border-radius: 8px;
 padding: 10px;
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-align-items: flex-start;
-gap: 10px;
 }
 
