@@ -21,9 +21,9 @@ flex-direction: row;
 flex: 1;
 flex-wrap: wrap;
 align-content: center;
-padding: 16;
-padding-bottom: 0;
-row-gap: 12;
+padding: 16px;
+padding-bottom: 0px;
+row-gap: 12px;
 column-gap: auto;
 width: 100%;
 }
@@ -31,30 +31,44 @@ width: 100%;
 
 .Logo-Container
 {
+display: flex;
 flex-wrap: wrap;
-padding: 10;
-gap: 10;
+flex-direction: row;
+align-content: center;
+padding: 10px;
+gap: 10px;
 flex: 1;
 }
 
 .Logo-Inner-Container
 {
+display: flex;
 flex-wrap: wrap;
+flex-direction: row;
 align-content: center;
 }
 
 .Nav-Container
 {
-
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-content: center;
+padding: 16px;
+padding-bottom: 0px;
 }
 
 .Nav-Inner-Container
 {
-
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-content: center;
 }
 
 .NavButton
 {
-
+display: flex;
+flex-direction: row;
 }
 
