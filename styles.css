@@ -6,12 +6,6 @@ html
 body
 {
 font-family: Arial, Helvetica, sans-serif;
-min-width: 320;
-padding: 4px;
-display: flex;
-flex-direction: column;
-align-content: center;
-gap: 10px;
 }
 
 .Header-Container
@@ -70,5 +64,6 @@ align-content: center;
 {
 display: flex;
 flex-direction: row;
+border-radius: 12px;
 }
 
