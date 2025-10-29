@@ -1,44 +1,48 @@
-body 
+.body
 {
-    gap: 10;
-    padding: 4;
-    
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    
-    min-width: 360px;
+height: 1934px;
+width: 1440px;
+padding: 4px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+left: 2334px;
+top: 736px;
+position:relative;
 }
 
 .Header-Container
 {
 height:172px;
 width:1432px;
-padding-left: 16px;
-padding-right: 16px;
-padding-top: 16px;
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: space-between;
-align-items: center;
-position: relative;
+padding-left:16px;
+padding-right:16px;
+padding-top:16px;
+display:flex;
+flex-direction:row;
+flex-wrap:nowrap;
+justify-content:space-between;
+align-items:center;
+position:absolute;
+top:9.5px;
+left:4px;
 }
+
 
 .Logo-Container
 {
-height: 156px;
-width: 320px;
-align-self: flex-start;
-left: 16px;
-top: 16px;
-position: absolute;
-padding: 10px;
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-align-items: flex-start;
-gap: 10px;
+height:156px;
+width:320px;
+align-self:flex-start;
+left:16px;
+top:16px;
+position:absolute;
+padding:10px;
+display:flex;
+flex-direction:row;
+justify-content:flex-start;
+align-items:flex-start;
+gap:10px;
 }
 
 .Logo-Inner-Container
