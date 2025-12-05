@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h2>Register for {{ event.title }}</h2>
+
+{% if not user.is_authenticated %}
+  <p>You must <a href="{% url 'auth:login' %}">log in</a> to register.</p>
+{% else %}
+  {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+  <form method="POST">
+    {% csrf_token %}
+    <p>You're registering as <strong>{{ user.get_username }}</strong> ({{ user.email }}).</p>
+    <button class="register-btn" type="submit">Confirm Registration</button>
+  </form>
+{% endif %}
+{% endblock %}

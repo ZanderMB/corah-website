@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Matches hierarchy: HeroContainer -->
+<section class="hero-container">
+    
+    <!-- Matches hierarchy: Hero -->
+    <div class="hero">
+        
+        <!-- Matches hierarchy: HeroImg -->
+        <div class="hero-img">
+            <!-- Uses the hero image from static files -->
+            <img src="{% static 'images/Placeholder.png' %}" alt="Community gathering">
+        </div>
+
+        <!-- Matches hierarchy: HeroText -->
+        <div class="hero-text">
+            
+            <!-- Matches hierarchy: HeroTextContainer -->
+            <div class="hero-text-container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+
+            <!-- Matches hierarchy: HeroButtons -->
+            <div class="hero-buttons">
+                <a href="{% url 'events:event_list' %}" class="btn-hero btn-green">View All Events</a>
+                <a href="{% url 'events:event_list' %}" class="btn-hero btn-brown">Attend an Event</a>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+{% endblock %}

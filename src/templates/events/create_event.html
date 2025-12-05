@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Create Event{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Create Event</h2>
+    <p>Create an Event to be hosted</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Loop to style fields exactly like your design -->
+        {% for field in form %}
+        <div class="form-group" style="margin-bottom: 1.5rem; text-align: left;">
+            <label for="{{ field.id_for_label }}" style="display:block; margin-bottom:5px; font-weight:bold;">
+                {{ field.label }}
+            </label>
+            
+            <!-- Render the input field -->
+            {{ field }}
+            
+            {% if field.errors %}
+                <div style="color: red; font-size: 0.8rem; margin-top: 5px;">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="register-btn" style="width: 100%; border-radius: 20px;">Create Event</button>
+    </form>
+</div>
+{% endblock %}

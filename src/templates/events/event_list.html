@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+<h2 style="text-align:center; margin-bottom: 2rem;">Upcoming Events</h2>
+
+<div class="event-grid">
+    {% for event in events %}
+    <div class="event-card">
+        <div class="event-img">
+            {% if event.image %}
+                <img src="{{ event.image.url }}" alt="{{ event.title }}">
+            {% else %}
+                <img src="{% static 'images/Placeholder.png' %}" alt="Event Placeholder">
+            {% endif %}
+        </div>
+        
+        <div class="event-details">
+            <h3>{{ event.title }}</h3>
+            <p style="font-size: 0.9rem; color: #666;">
+                <i class="far fa-calendar-alt"></i> {{ event.date }}
+            </p>
+            <p>Seats: {{ event.seats_taken }} / {{ event.capacity }}</p>
+
+            {% if event.seats_available > 0 %}
+                <a href="{% url 'events:event_register' event.id %}" class="btn-register">Register</a>
+            {% else %}
+                <span class="btn-register" style="background-color:#ccc; cursor:not-allowed;">Event Full</span>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+        <p>No upcoming events found.</p>
+    {% endfor %}
+</div>
+{% endblock %}

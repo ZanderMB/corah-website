@@ -1,0 +1,12 @@
+.git
+.gitignore
+pgdata/
+pgadmin-data/
+__pycache__/
+*.log
+.vscode/
+.idea/
+.DS_Store
+README.md
+Makefile
+pgadmin/
