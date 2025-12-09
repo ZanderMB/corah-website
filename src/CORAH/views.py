@@ -3,16 +3,15 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-# Ensure you have these files created in your src/CORAH/ folder
 from .forms import SignupForm, EventForm
 from .models import Event
 from .services import RegistrationService
 
-# --- Home View ---
+#Home View
 def home(request):
     return render(request, "home.html")
 
-# --- Auth Views ---
+# Auth Views
 def signup_view(request):
     if request.user.is_authenticated:
         return redirect("events:event_list")
@@ -34,7 +33,7 @@ def signup_view(request):
 
     return render(request, "auth/signup.html", {"form": form})
 
-# --- Event Views ---
+# vent Views
 def event_list_view(request):
     events = Event.objects.all().order_by("date")
     return render(request, "events/event_list.html", {"events": events})
@@ -45,12 +44,11 @@ def register_view(request, event_id):
     error = None
 
     if request.method == "POST":
-        # With auth, we no longer need to accept name/email here.
+        # Don't need the name email rwos here anymore with the linked Auth_User
         svc = RegistrationService()
         try:
             svc.register_logged_in_user_for_event(request.user, event.id)
             messages.success(request, "Registration successful!")
-            # Redirecting to the success view defined below
             return redirect("events:event_register_success", event_id=event.id)
         except ValueError as e:
             error = str(e)
@@ -64,7 +62,7 @@ def register_success_view(request, event_id):
     return render(request, "events/register_success.html", {"event": event})
 
 
-#-- Creating Event Form
+# Creating Event Form
 
 @login_required(login_url="auth:login")
 def create_event_view(request):

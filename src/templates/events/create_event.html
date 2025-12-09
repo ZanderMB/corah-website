@@ -10,14 +10,12 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         
-        <!-- Loop to style fields exactly like your design -->
         {% for field in form %}
         <div class="form-group" style="margin-bottom: 1.5rem; text-align: left;">
             <label for="{{ field.id_for_label }}" style="display:block; margin-bottom:5px; font-weight:bold;">
                 {{ field.label }}
             </label>
             
-            <!-- Render the input field -->
             {{ field }}
             
             {% if field.errors %}

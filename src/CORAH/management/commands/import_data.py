@@ -42,8 +42,7 @@ class Command(BaseCommand):
             
     def import_users(self, file_path):
         """
-        Imports data into the Attendee table.
-        Required: Creates the linked Django Auth User first.
+        Imports data into the Attendee table and creates a linked Auth_User
         """
         try:
             df = pd.read_csv(file_path)
@@ -51,8 +50,7 @@ class Command(BaseCommand):
 
             for _, row in df.iterrows():
                 
-                # STEP 1: Handle the Login Account (Django Auth User)
-                # The 'username' column from CSV belongs here.
+                # Creating the Auth_User
                 user_account, created_account = User.objects.get_or_create(
                     username=row['username'], 
                     defaults={
@@ -65,9 +63,7 @@ class Command(BaseCommand):
                     user_account.set_password('CorahPass123!')
                     user_account.save()
 
-                # STEP 2: Handle the Profile (Your 'Attendee' Model)
-                # We link it to the account created above using 'user=user_account'.
-                # We do NOT pass 'username' here, because Attendee doesn't have that field.
+                # Inseert Data into Attendee from the Auth_User
                 attendee, created_profile = Attendee.objects.get_or_create(
                     user=user_account, 
                     defaults={

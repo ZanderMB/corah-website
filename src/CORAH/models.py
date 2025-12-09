@@ -19,9 +19,7 @@ class Event(models.Model):
 
 
 class Attendee(models.Model):
-    # NEW: link to Django auth user (one profile per user)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="attendee")
-    # Keep name/email for convenience & denormalized display
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
 
