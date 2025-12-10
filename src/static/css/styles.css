@@ -104,7 +104,6 @@ main {
     border-radius: 0 0 50% 50% / 60px; 
     overflow: hidden;
     line-height: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-bottom: 1rem;
 }
 
