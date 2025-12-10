@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Signed Out — Corah{% endblock %}
+{% block content %}
+<section class="card center">
+  <h2>You’ve been signed out</h2>
+  <p class="mb-4 muted">Thanks for visiting. Come back soon!</p>
+  <a class="btn" href="{% url 'events:login' %}">Sign In</a>
+  <a class="btn secondary" href="{% url 'events:event_list' %}">Browse Events</a>
+</section>
+{% endblock %}

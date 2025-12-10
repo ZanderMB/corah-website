@@ -7,32 +7,58 @@
 <h2 style="text-align:center; margin-bottom: 2rem;">Upcoming Events</h2>
 
 <div class="event-grid">
-    {% for event in events %}
-    <div class="event-card">
+    {% for event in page_obj.object_list %}
+    <article class="event-card">
         <div class="event-img">
-            {% if event.image %}
-                <img src="{{ event.image.url }}" alt="{{ event.title }}">
-            {% else %}
-                <img src="{% static 'images/Placeholder.png' %}" alt="Event Placeholder">
-            {% endif %}
+            <img src="{% static 'images/Placeholder.png' %}" alt="Event Placeholder">
         </div>
-        
         <div class="event-details">
-            <h3>{{ event.title }}</h3>
-            <p style="font-size: 0.9rem; color: #666;">
-                <i class="far fa-calendar-alt"></i> {{ event.date }}
-            </p>
-            <p>Seats: {{ event.seats_taken }} / {{ event.capacity }}</p>
+            <h3>
+                <a href="{% url 'events:event_detail' event.id %}">
+                  {{ event.title|safe }}
+                </a>
+            </h3>
 
-            {% if event.seats_available > 0 %}
-                <a href="{% url 'events:event_register' event.id %}" class="btn-register">Register</a>
-            {% else %}
-                <span class="btn-register" style="background-color:#ccc; cursor:not-allowed;">Event Full</span>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+                {{ event.date|date:"F d, Y" }}
+                {% if event.start_time %} • {{ event.start_time|time:"g:i A" }}{% endif %}
+                {% if event.location %} • {{ event.location }}{% endif %}
+            </p>
+
+            {% if event.description_html %}
+                <div class="event-description" style="font-size: 1rem; margin-bottom: 1rem;">
+                    {{ event.description_html|safe|truncatewords_html:25 }}
+                </div>
             {% endif %}
+            
+
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">
+                <span style="display: inline-block; background-color: {% if event.is_free %}#32CD32{% else %}#A0522D{% endif %}; color: white; padding: 2px 8px; border-radius: 12px; font-weight: bold;">
+                    {{ event.price_display }}
+                </span>
+                • {{ event.seats_available }} seats available
+            </p>
+
+            <div class="event-actions" style="display: flex; gap: 10px; align-items: center;">
+                {% if event.seats_available > 0 %}
+                    <a href="{% url 'events:event_register' event.id %}" class="btn-register">Register</a>
+                {% else %}
+                    <span class="btn-register" style="background-color:#ccc; cursor:not-allowed;">Event Full</span>
+                {% endif %}
+
+                {% if request.user.is_staff %}
+                    <a href="{% url 'events:event_form' event.id %}" style="color: var(--primary-purple); font-size: 0.9rem;">Edit</a>
+                {% endif %}
+            </div>
         </div>
-    </div>
+    </article>
     {% empty %}
-        <p>No upcoming events found.</p>
+        <p style="grid-column: 1 / -1; text-align: center;">No upcoming events found.</p>
     {% endfor %}
 </div>
+
+{% if page_obj %}
+    {% include "partials/pagination.html" %}
+{% endif %}
+
 {% endblock %}

@@ -1,11 +1,11 @@
-title,date,location,capacity,seats_taken
-Community Nature Walk,2025-05-15,Riverside Park Trail,30,12
-Seniors Tech Support Drop-in,2025-05-20,Community Hall Room B,15,10
-Annual Summer Bingo Bash,2025-06-01,Grand Hall,100,85
-Healthy Eating Workshop,2025-06-10,Community Kitchen,20,20
-Chair Yoga Session,2025-06-15,Wellness Center,25,5
-Rural Transportation Town Hall,2025-07-05,Main Auditorium,200,45
-Gardening Club Meetup,2025-07-12,Community Garden,40,15
-Introduction to Digital Banking,2025-07-20,Library Meeting Room,10,2
-Fall Flu Shot Clinic,2025-09-15,Health Clinic,500,0
-Winter Holiday Gala,2025-12-10,Grand Hall,150,148
+title,date,start_time,end_time,location,capacity,seats_taken,price,description_html
+"Community Nature Walk",2025-05-15,09:30:00,11:00:00,"Riverside Park Trail",30,12,0.00,"<p>Join us for a <strong>refreshing morning walk</strong> through the beautiful Riverside Park. A great way to connect with nature and neighbors.</p>"
+"Seniors Tech Support Drop-in",2025-05-20,13:00:00,15:00:00,"Community Hall Room B",15,10,0.00,"<p>Having trouble with your smartphone, tablet, or computer? Our volunteers are here to help! Drop in anytime during the session for one-on-one assistance.</p>"
+"Annual Summer Bingo Bash",2025-06-01,18:00:00,20:00:00,"Grand Hall",100,85,5.00,"<p>Get your dabbers ready for our <strong>Annual Summer Bingo Bash!</strong> Great prizes and a fun evening guaranteed. Price includes one bingo card.</p>"
+"Healthy Eating Workshop",2025-06-10,11:00:00,12:30:00,"Community Kitchen",20,20,0.00,"<p>Learn to cook delicious and nutritious meals on a budget. This interactive workshop includes live demonstrations and recipe handouts to take home.</p>"
+"Chair Yoga Session",2025-06-15,10:00:00,11:00:00,"Wellness Center",25,5,0.00,"<p>A gentle yoga session suitable for all mobility levels. Improve flexibility, balance, and relaxation from the comfort of a chair. No experience necessary.</p>"
+"Rural Transportation Town Hall",2025-07-05,19:00:00,21:00:00,"Main Auditorium",200,45,0.00,"<p>Have your voice heard on the future of transportation in our community. Local officials will be present to answer questions and discuss upcoming projects.</p>"
+"Gardening Club Meetup",2025-07-12,14:00:00,15:30:00,"Community Garden",40,15,0.00,"<p>Share tips, swap seeds, and enjoy a pleasant afternoon with fellow gardening enthusiasts. All are welcome, from beginners to seasoned experts.</p>"
+"Introduction to Digital Banking",2025-07-20,13:30:00,15:00:00,"Library Meeting Room",10,2,0.00,"<p>Learn the basics of online and mobile banking in a safe and supportive environment. This session will cover:<ul><li>Logging in safely</li><li>Checking balances</li><li>Paying bills online</li></ul></p>"
+"Fall Flu Shot Clinic",2025-09-15,09:00:00,16:00:00,"Health Clinic",500,0,0.00,"<p>Protect yourself and your community this flu season. Free flu shots are available on a walk-in basis. Please bring your health card.</p>"
+"Winter Holiday Gala",2025-12-10,18:30:00,22:00:00,"Grand Hall",150,148,25.00,"<p>Celebrate the holiday season with an elegant evening of dinner, dancing, and live music. A perfect way to connect with friends and neighbors. <strong>Formal attire is encouraged.</strong></p>"

@@ -308,3 +308,49 @@ footer {
         align-items: center;
     }
 }
+
+/* --- Pagination --- */
+.pagination {
+    /* This centers the entire pagination block on the page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0; 
+}
+
+.pagination ul {
+    /* This is the KEY part that makes the list horizontal */
+    display: flex; 
+    align-items: center;
+    
+    /* This removes the black bullet points */
+    list-style: none; 
+
+    /* This adds space between each item (e.g., "Prev" and "1") */
+    gap: 1.5rem; 
+
+    /* These remove default browser spacing */
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li a,
+.pagination li span {
+    text-decoration: none;
+    color: var(--primary-purple);
+}
+
+.pagination li a:hover {
+    text-decoration: underline;
+    color: var(--text-dark);
+}
+
+.pagination li.active span {
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+.pagination li.disabled span {
+    color: #aaa;
+    cursor: default;
+}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ event.title|striptags }}{% endblock %}
+
+{% block content %}
+<div class="event-detail-container" style="max-width: 800px; margin: 3rem auto; padding: 2rem; background-color: var(--white); border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    
+    <h2 style="text-align: center; color: var(--primary-purple); margin-bottom: 2rem;">{{ event.title|safe }}</h2>
+
+    <div class="event-info" style="line-height: 1.8; font-size: 1.1rem;">
+        <p><strong>Date:</strong> {{ event.date|date:"F d, Y" }}</p>
+        
+        {% if event.start_time %}
+        <p><strong>Time:</strong> 
+            {{ event.start_time|time:"g:i A" }}
+            {% if event.end_time %} - {{ event.end_time|time:"g:i A" }}{% endif %}
+        </p>
+        {% endif %}
+
+        {% if event.location %}
+        <p><strong>Location:</strong> {{ event.location }}</p>
+        {% endif %}
+
+        <p><strong>Price:</strong> {{ event.price_display }}</p>
+
+        <p>
+            <strong>Availability:</strong> 
+            {{ event.seats_available }} / {{ event.capacity }} seats remaining
+        </p>
+    </div>
+
+    {% if event.description_html %}
+    <div class="event-description" style="margin-top: 2.5rem; border-top: 1px solid #eee; padding-top: 2rem;">
+        <h3 style="color: var(--text-dark);">Event Description</h3>
+        <div style="margin-top: 1rem;">{{ event.description_html|safe }}</div>
+    </div>
+    {% endif %}
+
+    <div class="event-actions" style="text-align: center; margin-top: 3rem; border-top: 1px solid #eee; padding-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+        <a href="{% url 'events:event_form' event.pk %}" class="nav-btn">Update Event</a>
+        <a href="{% url 'events:event_delete' event.pk %}" class="nav-btn" style="background-color: #A0522D;">Delete Event</a>
+    </div>
+
+</div>
+{% endblock %}

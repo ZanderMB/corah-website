@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Update Event{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Update Event</h2>
+    <p>Edit the details for this event.</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <button type="submit" class="register-btn" style="width: 100%; border-radius: 20px;">Save Changes</button>
+        <div style="text-align: center; margin-top: 1rem;">
+            <a href="{% url 'events:event_detail' form.instance.pk %}" style="color: var(--text-dark);">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

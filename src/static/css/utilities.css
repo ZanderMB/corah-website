@@ -1,0 +1,7 @@
+.mt-0 { margin-top: 0; }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mb-0 { margin-bottom: 0; }
+.mb-4 { margin-bottom: var(--space-4); }
+.small { font-size: var(--fs-sm); }
+.muted { color: var(--text-muted); }
